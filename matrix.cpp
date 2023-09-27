@@ -43,7 +43,7 @@ number Matrix::find_determinant(){
                 }
             }
         }
-        det += (col % 2 == 0 ? 1 : -1) * matrix_vector[0][col] * minor.find_determinant();
+        det += matrix_vector[0][col] * (col % 2 == 0 ? 1 : -1)  * minor.find_determinant();
     }
     return det;
 }

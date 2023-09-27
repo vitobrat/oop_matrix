@@ -31,7 +31,7 @@ int Application::exec(){
             break;
         //команду, инициирующую расчет определителя матрицы и вывод результатов расчета;
         case 2:
-            cout << "Determinant:" <<matrix->get_determinant() << "\n";
+            cout << "Determinant:" << matrix->get_determinant() << "\n";
             break;
         //команду, инициирующую формирования транспонированной матрицы и ее вывода в консоль;
         case 3:
