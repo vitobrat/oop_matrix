@@ -13,7 +13,7 @@ Application::Application()
 //функция, имитирующая консоль, где все команды происходят
 int Application::exec(){
     int size = 3;
-    Matrix *matrix = new Matrix(size, false);
+    Matrix *matrix = new Matrix(size, 0);
     while(true){
         int user_choice = menu();//получаем выбор пользователя
         switch (user_choice) {
@@ -27,11 +27,11 @@ int Application::exec(){
             cout << "Matrix size: \n";
             cin >> size;
             delete matrix;
-            matrix = new Matrix(size, true);
+            matrix = new Matrix(size);
             break;
         //команду, инициирующую расчет определителя матрицы и вывод результатов расчета;
         case 2:
-            cout << "Determinant:" << matrix->get_determinant() << "\n";
+            cout << "Determinant:" << matrix->find_determinant() << "\n";
             break;
         //команду, инициирующую формирования транспонированной матрицы и ее вывода в консоль;
         case 3:
@@ -40,7 +40,7 @@ int Application::exec(){
             break;
         //команду, инициирующую расчет ранга матрицы и вывод результатов расчета;
         case 4:
-            cout << "Rang:" << matrix->get_rang() << "\n";
+            cout << "Rang:" << matrix->find_rang() << "\n";
             break;
         //команду, инициирующую представление в консоль текущего объекта матрицы;
         case 5:

@@ -16,7 +16,8 @@ add_executable(matrix
   main.cpp
   application.cpp matrix.cpp
   application.h matrix.h number.h
-  complex.h complex.cpp
+  complex.cpp
+  complex.h
 )
 target_link_libraries(matrix Qt${QT_VERSION_MAJOR}::Core)
 
