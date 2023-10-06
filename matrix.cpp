@@ -5,13 +5,12 @@
 
 using namespace std;
 
-//конструктор класса Matix по умолчанию заполняется матрицей 3*3, состоящей из 0. Сразу рассчитывает определитель и ранг
-Matrix::Matrix(int size, bool flag) :  size(size), matrix_vector(size, vector<number>(size, 0)) {
-    if (flag) {
-        fill_matrix(matrix_vector);//flag показывает заполнять матрицу числами или оставить по умольчанию
-        determinant = find_determinant();
-        rang = find_rang();
-    }
+//конструктор класса Matix по умолчанию заполняется матрицей 3*3, состоящей из value.
+Matrix::Matrix(int size, int value) :  size(size), matrix_vector(size, vector<number>(size, value)) {
+}
+
+Matrix::Matrix(int size) :  size(size), matrix_vector(size, vector<number>(size, 0)) {
+    fill_matrix(matrix_vector);
 }
 
 //пользователь заполняет матрицу. вызывается в конструкторе при создании объекта
@@ -24,7 +23,7 @@ void Matrix::fill_matrix(vector<vector<number>> &matrix_vector){
     }
 }
 
-//вызывается в конструкторе при создании объекта. в результате отдает вещественное число
+
 number Matrix::find_determinant(){
     if(size == 1){
         return matrix_vector[0][0];
@@ -34,7 +33,7 @@ number Matrix::find_determinant(){
     }
     number det = 0.0;
     for (int col = 0; col < size; col++) {
-        Matrix minor(size - 1, false);
+        Matrix minor(size - 1, 0);
         for (int i = 1; i < size; i++) {
             int minorCol = 0;
             for (int j = 0; j < size; j++) {
@@ -49,13 +48,12 @@ number Matrix::find_determinant(){
 }
 
 
-//вызывается в конструкторе при создании объекта. в результате отдает целое число
 int Matrix::find_rang(){
-    if(determinant != 0) return size;
+    if(find_determinant() != 0) return size;
     for(int count = 1; count < size; count++){
         for(int i = 0; i <= count; i++){
             for(int j = 0; j <= count; j++){
-                Matrix minor(size - count, false);
+                Matrix minor(size - count, 0);
                 for(int x = i, x1 = 0; x1 < size - count; x++, x1++){
                     for(int y = j, y1 = 0; y1 < size - count; y++, y1++){
                         minor.matrix_vector[x1][y1] = matrix_vector[x][y];
@@ -69,15 +67,6 @@ int Matrix::find_rang(){
     return 0;
 }
 
-//геттер определителя для инкапсуляции
-number Matrix::get_determinant(){
-    return determinant;
-}
-
-//геттер ранга для инкапсуляции
-int Matrix::get_rang(){
-    return rang;
-}
 
 //транспонирует матрицу тем, что в объекте matrix изменяет matrix_vector. вывод на экран осуществляется в Application.exec()
 void Matrix::transpose(Matrix *matrix){
