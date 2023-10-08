@@ -1,10 +1,11 @@
-#include "application.h"
-#include <iostream>
+#include "interface.h"
 
-using namespace std;
+#include <QApplication>
 
-int main()
+int main(int argc, char *argv[])
 {
-    Application app;
-    app.exec();
+    QApplication a(argc, argv);
+    Interface w;
+    w.show();
+    return a.exec();
 }
