@@ -1,8 +1,8 @@
 #ifndef NUMBER_H
 #define NUMBER_H
 
-#include "complex.h"
+#include "rational.h"
+typedef Rational number;
 
-typedef complex number;
 
 #endif // NUMBER_H
