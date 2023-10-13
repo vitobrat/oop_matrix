@@ -9,18 +9,8 @@ using namespace std;
 Matrix::Matrix(int size, int value) :  size(size), matrix_vector(size, vector<number>(size, value)) {
 }
 
-Matrix::Matrix(int size) :  size(size), matrix_vector(size, vector<number>(size, 0)) {
-    fill_matrix(matrix_vector);
-}
+Matrix::Matrix(vector<vector<number>> matrix_vector) :  size(matrix_vector[0].size()), matrix_vector(matrix_vector) {
 
-//пользователь заполняет матрицу. вызывается в конструкторе при создании объекта
-void Matrix::fill_matrix(vector<vector<number>> &matrix_vector){
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++) {
-            cout << "Element [" << i + 1 << "][" << j + 1 << "]: ";
-                    cin >> matrix_vector[i][j];
-        }
-    }
 }
 
 
@@ -69,10 +59,10 @@ int Matrix::find_rang(){
 
 
 //транспонирует матрицу тем, что в объекте matrix изменяет matrix_vector. вывод на экран осуществляется в Application.exec()
-void Matrix::transpose(Matrix *matrix){
-    for(int i = 0; i < matrix->size; i++){
-        for (int j = i + 1; j < matrix->size; j++){
-                    swap(matrix->matrix_vector[i][j], matrix->matrix_vector[j][i]);
+void Matrix::transpose(){
+    for(int i = 0; i < this->size; i++){
+        for (int j = i + 1; j < this->size; j++){
+            swap(this->matrix_vector[i][j], this->matrix_vector[j][i]);
         }
     }
 }
@@ -80,13 +70,14 @@ void Matrix::transpose(Matrix *matrix){
 
 
 //дружественная функция для вывода матрицы на экран
-ostream& operator<< (ostream& cout, Matrix& matrix){
-    cout << "Matrix " << matrix.size << "x" << matrix.size << ":" << std::endl;
+QString& operator<< (QString& cout, Matrix& matrix){
+
     for (int i = 0; i < matrix.size; ++i) {
         for (int j = 0; j < matrix.size; ++j) {
-            cout << matrix.matrix_vector[i][j] << "\t";
+            cout << matrix.matrix_vector[i][j];
+            cout += "\t";
     }
-    cout << endl;
+    cout += "\n";
     }
     return cout;
 }

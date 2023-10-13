@@ -5,7 +5,15 @@ Rational::Rational(const int& r)
     num = r;
     den = 1;
 }
-
+Rational :: Rational(const Rational& other) {
+    num = other.num;
+    den = other.den;
+}
+Rational::Rational(const int& r, const int& c)
+{
+    num = r;
+    den = c;
+}
 Rational::Rational()
 {
 
@@ -41,12 +49,21 @@ std :: ostream& operator << (std :: ostream& os, Rational rational){
     return os;
 }
 
-std :: istream& operator >> (std :: istream& is, Rational &rational){
-    is >> rational.num >> rational.den;
-    if (rational.den == 0) rational.den = 1;
-    return is;
-}
 
+QString& operator<<(QString& s, Rational & d){
+    if (d.num == 0) {
+        s += "0";
+        return s;
+    }
+    s += QString().setNum(d.num);
+    s += '/';
+    if (d.den == 0){
+        d.den = 1;
+    }
+    s += QString().setNum(d.den);
+    return s;
+
+}
 Rational Rational :: operator*(Rational rational){
     Rational result;
     result.num = num * rational.num;
@@ -66,6 +83,12 @@ Rational Rational :: operator*(int c){
     result.num = num * c;
     result.den= den;
     return result;
+}
+
+Rational Rational :: operator=(const Rational &c){
+    num = c.num;
+    den = c.den;
+    return *this;
 }
 
 Rational Rational :: operator += (Rational rational){
