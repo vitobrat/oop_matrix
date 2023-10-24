@@ -1,5 +1,4 @@
 #include "interface.h"
-#include "number.h"
 using namespace std;
 
 const int window_size_x = 600;

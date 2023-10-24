@@ -1,1 +1,6 @@
 CMakeLists.txt.user
+*/.qtc_clangd/*
+build-server-Desktop_Qt_6_5_2_MinGW_64_bit-Debug
+build-prog4server-Desktop_Qt_6_5_2_MinGW_64_bit-Debug
+build-prog4client-Desktop_Qt_6_5_2_MinGW_64_bit-Debug
+*.user

@@ -1,6 +1,5 @@
 #ifndef INTERFACE_H
 #define INTERFACE_H
-#include "matrix.h"
 #include <QWidget>
 #include <QLabel>
 #include <QLineEdit>
@@ -25,6 +24,6 @@ public slots:
     void value_rang();
     void print_trans();
 private:
-    Matrix create_matix();
+
 };
 #endif // INTERFACE_H
