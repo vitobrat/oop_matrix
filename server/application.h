@@ -3,7 +3,6 @@
 
 #include <QObject>
 #include <QCoreApplication>
-
 #include "communicator.h"
 
 class TApplication : public QCoreApplication

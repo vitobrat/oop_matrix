@@ -14,7 +14,7 @@ const int edit_size_y = window_size_y / 10;
 Interface::Interface(QWidget *parent)
     : QWidget(parent)
 {
-    setWindowTitle("Практическая работа №3");
+    setWindowTitle("Практическая работа №4");
     setFixedSize(window_size_x, window_size_y);
 
 
@@ -93,10 +93,10 @@ Interface::Interface(QWidget *parent)
     output_text = new QLabel("", this);
     output_text->setGeometry(window_size_x*1/5, window_size_y*10/20, window_size_x/4, window_size_y/4);
 
-    connect(det_btn,SIGNAL(pressed()), this, SLOT(value_det()));
-    connect(transport_btn,SIGNAL(pressed()), this, SLOT(print_trans()));
-    connect(rang_btn,SIGNAL(pressed()), this, SLOT(value_rang()));
-    connect(print_btn,SIGNAL(pressed()), this, SLOT(print()));
+    connect(det_btn,SIGNAL(pressed()), this, SLOT(formRequest()));
+    connect(transport_btn,SIGNAL(pressed()), this, SLOT(formRequest()));
+    connect(rang_btn,SIGNAL(pressed()), this, SLOT(formRequest()));
+    connect(print_btn,SIGNAL(pressed()), this, SLOT(formRequest()));
 
 }
 
@@ -134,56 +134,54 @@ Interface::~Interface()
     delete rang_btn;
     delete print_btn;
 }
-Matrix Interface :: create_matix(){
-    vector<vector<number>> vec(3, std::vector<number>(3, 0));
-    number num1 (num_edit00->text().toDouble(), den_edit00->text().toDouble());
-    vec[0][0] = num1;
-    number num2 (num_edit01->text().toDouble(), den_edit01->text().toDouble());
-    vec[0][1] = num2;
-    number num3 (num_edit02->text().toDouble(), den_edit02->text().toDouble());
-    vec[0][2] = num3;
-    number num4 (num_edit10->text().toDouble(), den_edit10->text().toDouble());
-    vec[1][0] = num4;
-    number num5 (num_edit11->text().toDouble(), den_edit11->text().toDouble());
-    vec[1][1] = num5;
-    number num6 (num_edit12->text().toDouble(), den_edit12->text().toDouble());
-    vec[1][2] = num6;
-    number num7 (num_edit20->text().toDouble(), den_edit20->text().toDouble());
-    vec[2][0] = num7;
-    number num8 (num_edit21->text().toDouble(), den_edit21->text().toDouble());
-    vec[2][1] = num8;
-    number num9 (num_edit22->text().toDouble(), den_edit22->text().toDouble());
-    vec[2][2] = num9;
-    Matrix new_mat(vec);
-    return new_mat;
+
+void Interface::formRequest() {
+    QString msg;
+    msg << num_edit00->text();
+    msg << den_edit00->text();
+    msg << num_edit01->text();
+    msg << den_edit01->text();
+    msg << num_edit02->text();
+    msg << den_edit02->text();
+    msg << num_edit10->text();
+    msg << den_edit10->text();
+    msg << num_edit11->text();
+    msg << den_edit11->text();
+    msg << num_edit12->text();
+    msg << den_edit12->text();
+    msg << num_edit20->text();
+    msg << den_edit20->text();
+    msg << num_edit21->text();
+    msg << den_edit21->text();
+    msg << num_edit22->text();
+    msg << den_edit22->text();
+
+    QPushButton *btn = (QPushButton*) sender();
+
+    if (btn == print_btn)
+        msg << QString().setNum(PRINT_REQUEST);
+    if (btn == det_btn)
+        msg << QString().setNum(DETERM_REQUEST);
+    if (btn == rang_btn)
+        msg << QString().setNum(RANK_REQUEST);
+    if (btn == transport_btn)
+        msg << QString().setNum(TRANSPOSE_REQUEST);
+
+    qDebug() << "TInterface::formRequest(): \t" << msg;
+
+    emit request(msg);
 }
 
-void Interface:: value_det(){
-    Matrix matrix = create_matix();
-    QString output("");
-    number result = matrix.find_determinant();
-    output << result;
-    output_text->setText(output);
-}
 
-void Interface:: value_rang(){
-    Matrix matrix = create_matix();
-    QString output("");
-    output += to_string(matrix.find_rang());
-    output_text->setText(output);
-}
+void Interface::answer(QString msg) {
 
-void Interface:: print_trans(){
-    Matrix matrix = create_matix();
-    matrix.transpose();
-    QString output("");
-    output << matrix;
-    output_text->setText(output);
-}
+    QString text;
+    int sepInd = msg.indexOf(separator);
+    int answer = msg.left(sepInd).toInt();
+    if (answer >= LAST_ELEMENT) return;
 
-void Interface:: print(){
-    Matrix matrix = create_matix();
-    QString output("");
-    output << matrix;
-    output_text->setText(output);
+    msg = msg.mid(sepInd + 1, msg.length() - sepInd - 2);
+    sepInd = msg.indexOf(separator);
+    text += msg.left(sepInd);
+    output_text->setText(text);
 }

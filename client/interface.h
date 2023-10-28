@@ -1,6 +1,7 @@
 #ifndef INTERFACE_H
 #define INTERFACE_H
 #include <QWidget>
+#include"common.h"
 #include <QLabel>
 #include <QLineEdit>
 #include <QPushButton>
@@ -19,11 +20,12 @@ public:
     Interface(QWidget *parent = nullptr);
     ~Interface();
 public slots:
-    void value_det();
-    void print();
-    void value_rang();
-    void print_trans();
-private:
+    void answer(QString);
+private slots:
+    void formRequest();
+
+signals:
+    void request(QString);
 
 };
 #endif // INTERFACE_H

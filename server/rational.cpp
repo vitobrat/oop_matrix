@@ -1,4 +1,7 @@
 #include "rational.h"
+#include "common.h"
+
+QChar Rational::SEPARATOR = separator;
 
 Rational::Rational(const int& r)
 {
@@ -19,6 +22,11 @@ Rational::Rational()
 
 }
 
+Rational::Rational(const QByteArray &arr) {
+    int sepInd = arr.indexOf(SEPARATOR.toLatin1());
+    num = arr.left(sepInd).toDouble();
+    den = arr.right(arr.length() - sepInd - 1).toDouble();
+}
 // Функция для нахождения НОД двух чисел
 int gcd(int a, int b) {
     while (b != 0) {
@@ -50,7 +58,7 @@ std :: ostream& operator << (std :: ostream& os, Rational rational){
 }
 
 
-QString& operator<<(QString& s, Rational & d){
+QString& operator<<(QString& s, Rational d){
     if (d.num == 0) {
         s += "0";
         return s;
@@ -63,6 +71,16 @@ QString& operator<<(QString& s, Rational & d){
     s += QString().setNum(d.den);
     return s;
 
+}
+
+QByteArray &operator>>(QByteArray &arr, Rational &num) {
+    int sepInd = arr.indexOf(Rational::SEPARATOR.toLatin1());
+    sepInd =  arr.indexOf(Rational::SEPARATOR.toLatin1(), sepInd + 1);
+    if (sepInd > 0) {
+        num = Rational(arr.left(sepInd));
+        arr = arr.right(arr.length() - sepInd - 1);
+    }
+    return arr;
 }
 Rational Rational :: operator*(Rational rational){
     Rational result;
