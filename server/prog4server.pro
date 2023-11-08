@@ -20,6 +20,7 @@ INCLUDEPATH += ../common
 SOURCES += main.cpp \
     application.cpp \
     matrix.cpp \
+    matrixsquare.cpp \
     rational.cpp \
     ../common/communicator.cpp \
     ../common/common.cpp
@@ -27,6 +28,7 @@ SOURCES += main.cpp \
 HEADERS += \
     application.h \
     matrix.h \
+    matrixsquare.h\
     number.h \
     rational.h \
     ../common/communicator.h \

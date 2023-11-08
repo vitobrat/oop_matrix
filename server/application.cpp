@@ -1,6 +1,6 @@
 #include "application.h"
 #include "common.h"
-#include "matrix.h"
+#include "matrixsquare.h"
 
 TApplication::TApplication(int argc, char *argv[])
             : QCoreApplication(argc,argv)
@@ -23,7 +23,7 @@ void TApplication::recieve(QByteArray msg)
             values[i][j] = num;
         }
     }
-    Matrix matrix(values);
+    MatrixSquare matrix(values);
 
     int sepInd = msg.indexOf(separator.toLatin1());
     int request = msg.left(sepInd).toInt();
