@@ -22,6 +22,7 @@ void TApplication::recieve(QByteArray msg)
     if (mode == R_MODE){
         int sepInd = msg.indexOf(separator.toLatin1());
         int request = msg.left(sepInd).toInt();
+        msg = msg.right(msg.length() - (sepInd + 1));
         std::vector<std::vector<Rational>> values(3, std::vector<Rational>(3, 0));
         for (int i = 0; i < 3; ++i) {
             for (int j = 0; j < 3; ++j) {
