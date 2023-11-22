@@ -16,6 +16,11 @@ enum messages
     LAST_ELEMENT
 };
 
+enum modes{
+    F_MODE = 1,
+    C_MODE,
+    R_MODE
+};
 extern const QChar separator;
 QString& operator<< (QString&,const QString&);
 

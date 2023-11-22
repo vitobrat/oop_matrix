@@ -1,11 +1,12 @@
 #ifndef INTERFACE_H
 #define INTERFACE_H
 #include <QWidget>
-#include"common.h"
+#include "common.h"
 #include <QLabel>
 #include <QLineEdit>
 #include <QPushButton>
 #include <QAbstractButton>
+#include <QRadioButton>
 class Interface : public QWidget
 {
     Q_OBJECT
@@ -15,6 +16,7 @@ class Interface : public QWidget
     QLineEdit *num_edit00, *den_edit00,*num_edit01, *den_edit01,*num_edit02, *den_edit02,*num_edit10, *den_edit10,
         *num_edit11, *den_edit11,*num_edit12, *den_edit12,*num_edit20, *den_edit20,*num_edit21, *den_edit21, *num_edit22, *den_edit22;
     QPushButton *det_btn, *transport_btn, *rang_btn, *print_btn;
+    QRadioButton *complex_btn, *rational_btn, *float_btn;
 
 public:
     Interface(QWidget *parent = nullptr);
