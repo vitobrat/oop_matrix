@@ -150,60 +150,28 @@ Interface::~Interface()
 
 void Interface::formRequest() {
     QString msg;
+
     if(float_btn->isChecked()){
         msg << QString().setNum(F_MODE);
-        msg << num_edit00->text();
-        msg << num_edit01->text();
-        msg << num_edit02->text();
-        msg << num_edit10->text();
-        msg << num_edit11->text();
-        msg << num_edit12->text();
-        msg << num_edit20->text();
-        msg << num_edit21->text();
-        msg << num_edit22->text();
     }
     else if(rational_btn->isChecked()){
         msg << QString().setNum(R_MODE);
-        msg << num_edit00->text();
-        msg << den_edit00->text();
-        msg << num_edit01->text();
-        msg << den_edit01->text();
-        msg << num_edit02->text();
-        msg << den_edit02->text();
-        msg << num_edit10->text();
-        msg << den_edit10->text();
-        msg << num_edit11->text();
-        msg << den_edit11->text();
-        msg << num_edit12->text();
-        msg << den_edit12->text();
-        msg << num_edit20->text();
-        msg << den_edit20->text();
-        msg << num_edit21->text();
-        msg << den_edit21->text();
-        msg << num_edit22->text();
-        msg << den_edit22->text();
+
     }
     else if(complex_btn->isChecked()){
         msg << QString().setNum(C_MODE);
-        msg << num_edit00->text();
-        msg << den_edit00->text();
-        msg << num_edit01->text();
-        msg << den_edit01->text();
-        msg << num_edit02->text();
-        msg << den_edit02->text();
-        msg << num_edit10->text();
-        msg << den_edit10->text();
-        msg << num_edit11->text();
-        msg << den_edit11->text();
-        msg << num_edit12->text();
-        msg << den_edit12->text();
-        msg << num_edit20->text();
-        msg << den_edit20->text();
-        msg << num_edit21->text();
-        msg << den_edit21->text();
-        msg << num_edit22->text();
-        msg << den_edit22->text();
     }
+    QPushButton *btn = (QPushButton*) sender();
+
+    if (btn == print_btn)
+        msg << QString().setNum(PRINT_REQUEST);
+    if (btn == det_btn)
+        msg << QString().setNum(DETERM_REQUEST);
+    if (btn == rang_btn)
+        msg << QString().setNum(RANK_REQUEST);
+    if (btn == transport_btn)
+        msg << QString().setNum(TRANSPOSE_REQUEST);
+
     msg << num_edit00->text();
     msg << den_edit00->text();
     msg << num_edit01->text();
@@ -222,18 +190,6 @@ void Interface::formRequest() {
     msg << den_edit21->text();
     msg << num_edit22->text();
     msg << den_edit22->text();
-
-    QPushButton *btn = (QPushButton*) sender();
-
-    if (btn == print_btn)
-        msg << QString().setNum(PRINT_REQUEST);
-    if (btn == det_btn)
-        msg << QString().setNum(DETERM_REQUEST);
-    if (btn == rang_btn)
-        msg << QString().setNum(RANK_REQUEST);
-    if (btn == transport_btn)
-        msg << QString().setNum(TRANSPOSE_REQUEST);
-
     qDebug() << "TInterface::formRequest(): \t" << msg;
 
     emit request(msg);
