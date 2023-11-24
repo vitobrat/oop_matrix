@@ -4,6 +4,8 @@
 #include <QObject>
 #include <QCoreApplication>
 #include "communicator.h"
+#include "mydouble.h"
+
 
 class TApplication : public QCoreApplication
 {

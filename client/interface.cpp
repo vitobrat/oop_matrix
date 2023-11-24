@@ -20,63 +20,63 @@ Interface::Interface(QWidget *parent)
 
     num_edit00 = new QLineEdit("0", this);
     num_edit00->setGeometry(window_size_x*1/5, window_size_y*1/20, edit_size_x, edit_size_y);
-    fractional_text1 = new QLabel(" / ", this);
+    fractional_text1 = new QLabel(" , ", this);
     fractional_text1->setGeometry(window_size_x*1/5 + 2*delta, window_size_y*1/20, text_size_x, text_size_y);
     den_edit00 = new QLineEdit("1", this);
     den_edit00->setGeometry(window_size_x*1/5 + 3*delta, window_size_y*1/20, edit_size_x, edit_size_y);
 
     num_edit01 = new QLineEdit("0", this);
     num_edit01->setGeometry(window_size_x*2/5, window_size_y*1/20, edit_size_x, edit_size_y);
-    fractional_text2 = new QLabel(" / ", this);
+    fractional_text2 = new QLabel(" , ", this);
     fractional_text2->setGeometry(window_size_x*2/5 + 2*delta, window_size_y*1/20, text_size_x, text_size_y);
     den_edit01 = new QLineEdit("1", this);
     den_edit01->setGeometry(window_size_x*2/5 + 3*delta, window_size_y*1/20, edit_size_x, edit_size_y);
 
     num_edit02 = new QLineEdit("0", this);
     num_edit02->setGeometry(window_size_x*3/5, window_size_y*1/20, edit_size_x, edit_size_y);
-    fractional_text3 = new QLabel(" / ", this);
+    fractional_text3 = new QLabel(" , ", this);
     fractional_text3->setGeometry(window_size_x*3/5 + 2*delta, window_size_y*1/20, text_size_x, text_size_y);
     den_edit02 = new QLineEdit("1", this);
     den_edit02->setGeometry(window_size_x*3/5 + 3*delta, window_size_y*1/20, edit_size_x, edit_size_y);
 
     num_edit10 = new QLineEdit("0", this);
     num_edit10->setGeometry(window_size_x*1/5, window_size_y*4/20, edit_size_x, edit_size_y);
-    fractional_text4 = new QLabel(" / ", this);
+    fractional_text4 = new QLabel(" , ", this);
     fractional_text4->setGeometry(window_size_x*1/5 + 2*delta, window_size_y*4/20, text_size_x, text_size_y);
     den_edit10 = new QLineEdit("1", this);
     den_edit10->setGeometry(window_size_x*1/5 + 3*delta, window_size_y*4/20, edit_size_x, edit_size_y);
 
     num_edit11 = new QLineEdit("0", this);
     num_edit11->setGeometry(window_size_x*2/5, window_size_y*4/20, edit_size_x, edit_size_y);
-    fractional_text5 = new QLabel(" / ", this);
+    fractional_text5 = new QLabel(" , ", this);
     fractional_text5->setGeometry(window_size_x*2/5 + 2*delta, window_size_y*4/20, text_size_x, text_size_y);
     den_edit11 = new QLineEdit("1", this);
     den_edit11->setGeometry(window_size_x*2/5 + 3*delta, window_size_y*4/20, edit_size_x, edit_size_y);
 
     num_edit12 = new QLineEdit("0", this);
     num_edit12->setGeometry(window_size_x*3/5, window_size_y*4/20, edit_size_x, edit_size_y);
-    fractional_text6 = new QLabel(" / ", this);
+    fractional_text6 = new QLabel(" , ", this);
     fractional_text6->setGeometry(window_size_x*3/5 + 2*delta, window_size_y*4/20, text_size_x, text_size_y);
     den_edit12 = new QLineEdit("1", this);
     den_edit12->setGeometry(window_size_x*3/5 + 3*delta, window_size_y*4/20, edit_size_x, edit_size_y);
 
     num_edit20 = new QLineEdit("0", this);
     num_edit20->setGeometry(window_size_x*1/5, window_size_y*7/20, edit_size_x, edit_size_y);
-    fractional_text7 = new QLabel(" / ", this);
+    fractional_text7 = new QLabel(" , ", this);
     fractional_text7->setGeometry(window_size_x*1/5 + 2*delta, window_size_y*7/20, text_size_x, text_size_y);
     den_edit20 = new QLineEdit("1", this);
     den_edit20->setGeometry(window_size_x*1/5 + 3*delta, window_size_y*7/20, edit_size_x, edit_size_y);
 
     num_edit21 = new QLineEdit("0", this);
     num_edit21->setGeometry(window_size_x*2/5, window_size_y*7/20, edit_size_x, edit_size_y);
-    fractional_text8 = new QLabel(" / ", this);
+    fractional_text8 = new QLabel(" , ", this);
     fractional_text8->setGeometry(window_size_x*2/5 + 2*delta, window_size_y*7/20, text_size_x, text_size_y);
     den_edit21 = new QLineEdit("1", this);
     den_edit21->setGeometry(window_size_x*2/5 + 3*delta, window_size_y*7/20, edit_size_x, edit_size_y);
 
     num_edit22 = new QLineEdit("0", this);
     num_edit22->setGeometry(window_size_x*3/5, window_size_y*7/20, edit_size_x, edit_size_y);
-    fractional_text9 = new QLabel(" / ", this);
+    fractional_text9 = new QLabel(" , ", this);
     fractional_text9->setGeometry(window_size_x*3/5 + 2*delta, window_size_y*7/20, text_size_x, text_size_y);
     den_edit22 = new QLineEdit("1", this);
     den_edit22->setGeometry(window_size_x*3/5 + 3*delta, window_size_y*7/20, edit_size_x, edit_size_y);
@@ -91,7 +91,7 @@ Interface::Interface(QWidget *parent)
     print_btn->setGeometry(window_size_x*3/5 + 4*delta, window_size_y - 1.5*button_size_y, button_size_x, button_size_y);
 
     output_text = new QLabel("", this);
-    output_text->setGeometry(window_size_x*1/5, window_size_y*10/20, window_size_x/4, window_size_y/4);
+    output_text->setGeometry(window_size_x*2/5, window_size_y*12/20, window_size_x/2, window_size_y/4);
 
     complex_btn = new QRadioButton("Комплексное", this);
     complex_btn->setGeometry(window_size_x*1/5 + 3*delta, window_size_y*10/20, button_size_x, edit_size_y);
@@ -150,46 +150,86 @@ Interface::~Interface()
 
 void Interface::formRequest() {
     QString msg;
+    QPushButton *btn = (QPushButton*) sender();
 
     if(float_btn->isChecked()){
         msg << QString().setNum(F_MODE);
+        if (btn == print_btn)
+            msg << QString().setNum(PRINT_REQUEST);
+        if (btn == det_btn)
+            msg << QString().setNum(DETERM_REQUEST);
+        if (btn == rang_btn)
+            msg << QString().setNum(RANK_REQUEST);
+        if (btn == transport_btn)
+            msg << QString().setNum(TRANSPOSE_REQUEST);
+        msg << num_edit00->text();
+        msg << num_edit01->text();
+        msg << num_edit02->text();
+        msg << num_edit10->text();
+        msg << num_edit11->text();
+        msg << num_edit12->text();
+        msg << num_edit20->text();
+        msg << num_edit21->text();
+        msg << num_edit22->text();
     }
     else if(rational_btn->isChecked()){
         msg << QString().setNum(R_MODE);
-
+        if (btn == print_btn)
+            msg << QString().setNum(PRINT_REQUEST);
+        if (btn == det_btn)
+            msg << QString().setNum(DETERM_REQUEST);
+        if (btn == rang_btn)
+            msg << QString().setNum(RANK_REQUEST);
+        if (btn == transport_btn)
+            msg << QString().setNum(TRANSPOSE_REQUEST);
+        msg << num_edit00->text();
+        msg << den_edit00->text();
+        msg << num_edit01->text();
+        msg << den_edit01->text();
+        msg << num_edit02->text();
+        msg << den_edit02->text();
+        msg << num_edit10->text();
+        msg << den_edit10->text();
+        msg << num_edit11->text();
+        msg << den_edit11->text();
+        msg << num_edit12->text();
+        msg << den_edit12->text();
+        msg << num_edit20->text();
+        msg << den_edit20->text();
+        msg << num_edit21->text();
+        msg << den_edit21->text();
+        msg << num_edit22->text();
+        msg << den_edit22->text();
     }
     else if(complex_btn->isChecked()){
         msg << QString().setNum(C_MODE);
+        if (btn == print_btn)
+            msg << QString().setNum(PRINT_REQUEST);
+        if (btn == det_btn)
+            msg << QString().setNum(DETERM_REQUEST);
+        if (btn == rang_btn)
+            msg << QString().setNum(RANK_REQUEST);
+        if (btn == transport_btn)
+            msg << QString().setNum(TRANSPOSE_REQUEST);
+        msg << num_edit00->text();
+        msg << den_edit00->text();
+        msg << num_edit01->text();
+        msg << den_edit01->text();
+        msg << num_edit02->text();
+        msg << den_edit02->text();
+        msg << num_edit10->text();
+        msg << den_edit10->text();
+        msg << num_edit11->text();
+        msg << den_edit11->text();
+        msg << num_edit12->text();
+        msg << den_edit12->text();
+        msg << num_edit20->text();
+        msg << den_edit20->text();
+        msg << num_edit21->text();
+        msg << den_edit21->text();
+        msg << num_edit22->text();
+        msg << den_edit22->text();
     }
-    QPushButton *btn = (QPushButton*) sender();
-
-    if (btn == print_btn)
-        msg << QString().setNum(PRINT_REQUEST);
-    if (btn == det_btn)
-        msg << QString().setNum(DETERM_REQUEST);
-    if (btn == rang_btn)
-        msg << QString().setNum(RANK_REQUEST);
-    if (btn == transport_btn)
-        msg << QString().setNum(TRANSPOSE_REQUEST);
-
-    msg << num_edit00->text();
-    msg << den_edit00->text();
-    msg << num_edit01->text();
-    msg << den_edit01->text();
-    msg << num_edit02->text();
-    msg << den_edit02->text();
-    msg << num_edit10->text();
-    msg << den_edit10->text();
-    msg << num_edit11->text();
-    msg << den_edit11->text();
-    msg << num_edit12->text();
-    msg << den_edit12->text();
-    msg << num_edit20->text();
-    msg << den_edit20->text();
-    msg << num_edit21->text();
-    msg << den_edit21->text();
-    msg << num_edit22->text();
-    msg << den_edit22->text();
     qDebug() << "TInterface::formRequest(): \t" << msg;
 
     emit request(msg);
