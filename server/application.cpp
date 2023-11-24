@@ -2,7 +2,7 @@
 #include "common.h"
 #include "matrixsquare.h"
 #include "rational.h"
-#include "complex.h"
+#include "mycomplex.h"
 
 TApplication::TApplication(int argc, char *argv[])
             : QCoreApplication(argc,argv)
