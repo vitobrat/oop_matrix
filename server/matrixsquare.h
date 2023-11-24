@@ -2,13 +2,18 @@
 #define MATRIXSQUARE_H
 #include "matrix.h"
 
-class MatrixSquare : public Matrix
+template <class number>
+class MatrixSquare : public Matrix<number>
 {
     int size;
 public:
     MatrixSquare(vector<vector<number>> matrix_vector);
-    number find_determinant();
-    int find_rang();
 };
+
+template <class number>
+MatrixSquare<number> :: MatrixSquare(vector<vector<number>> matrix_vector) : Matrix<number>(matrix_vector){
+    size = this->rows;
+}
+
 
 #endif // MATRIXSQUARE_H

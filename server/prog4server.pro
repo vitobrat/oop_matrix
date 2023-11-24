@@ -19,17 +19,17 @@ INCLUDEPATH += ../common
 
 SOURCES += main.cpp \
     application.cpp \
-    matrix.cpp \
-    matrixsquare.cpp \
+    mycomplex.cpp \
     rational.cpp \
     ../common/communicator.cpp \
     ../common/common.cpp
 
 HEADERS += \
     application.h \
+    double.h \
     matrix.h \
     matrixsquare.h\
-    number.h \
+    mycomplex.h \
     rational.h \
     ../common/communicator.h \
     ../common/common.h
