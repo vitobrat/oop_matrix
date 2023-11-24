@@ -11,72 +11,73 @@ const int text_size_y = window_size_y / 10;
 const int edit_size_x = window_size_x / 15;
 const int edit_size_y = window_size_y / 10;
 
+
 Interface::Interface(QWidget *parent)
     : QWidget(parent)
 {
-    setWindowTitle("Практическая работа №4");
+    setWindowTitle("Практическая работа №6");
     setFixedSize(window_size_x, window_size_y);
 
 
     num_edit00 = new QLineEdit("0", this);
     num_edit00->setGeometry(window_size_x*1/5, window_size_y*1/20, edit_size_x, edit_size_y);
-    fractional_text1 = new QLabel(" , ", this);
+    fractional_text1 = new QLabel(" +i ", this);
     fractional_text1->setGeometry(window_size_x*1/5 + 2*delta, window_size_y*1/20, text_size_x, text_size_y);
     den_edit00 = new QLineEdit("1", this);
     den_edit00->setGeometry(window_size_x*1/5 + 3*delta, window_size_y*1/20, edit_size_x, edit_size_y);
 
     num_edit01 = new QLineEdit("0", this);
     num_edit01->setGeometry(window_size_x*2/5, window_size_y*1/20, edit_size_x, edit_size_y);
-    fractional_text2 = new QLabel(" , ", this);
+    fractional_text2 = new QLabel(" +i ", this);
     fractional_text2->setGeometry(window_size_x*2/5 + 2*delta, window_size_y*1/20, text_size_x, text_size_y);
     den_edit01 = new QLineEdit("1", this);
     den_edit01->setGeometry(window_size_x*2/5 + 3*delta, window_size_y*1/20, edit_size_x, edit_size_y);
 
     num_edit02 = new QLineEdit("0", this);
     num_edit02->setGeometry(window_size_x*3/5, window_size_y*1/20, edit_size_x, edit_size_y);
-    fractional_text3 = new QLabel(" , ", this);
+    fractional_text3 = new QLabel(" +i ", this);
     fractional_text3->setGeometry(window_size_x*3/5 + 2*delta, window_size_y*1/20, text_size_x, text_size_y);
     den_edit02 = new QLineEdit("1", this);
     den_edit02->setGeometry(window_size_x*3/5 + 3*delta, window_size_y*1/20, edit_size_x, edit_size_y);
 
     num_edit10 = new QLineEdit("0", this);
     num_edit10->setGeometry(window_size_x*1/5, window_size_y*4/20, edit_size_x, edit_size_y);
-    fractional_text4 = new QLabel(" , ", this);
+    fractional_text4 = new QLabel(" +i ", this);
     fractional_text4->setGeometry(window_size_x*1/5 + 2*delta, window_size_y*4/20, text_size_x, text_size_y);
     den_edit10 = new QLineEdit("1", this);
     den_edit10->setGeometry(window_size_x*1/5 + 3*delta, window_size_y*4/20, edit_size_x, edit_size_y);
 
     num_edit11 = new QLineEdit("0", this);
     num_edit11->setGeometry(window_size_x*2/5, window_size_y*4/20, edit_size_x, edit_size_y);
-    fractional_text5 = new QLabel(" , ", this);
+    fractional_text5 = new QLabel(" +i ", this);
     fractional_text5->setGeometry(window_size_x*2/5 + 2*delta, window_size_y*4/20, text_size_x, text_size_y);
     den_edit11 = new QLineEdit("1", this);
     den_edit11->setGeometry(window_size_x*2/5 + 3*delta, window_size_y*4/20, edit_size_x, edit_size_y);
 
     num_edit12 = new QLineEdit("0", this);
     num_edit12->setGeometry(window_size_x*3/5, window_size_y*4/20, edit_size_x, edit_size_y);
-    fractional_text6 = new QLabel(" , ", this);
+    fractional_text6 = new QLabel(" +i ", this);
     fractional_text6->setGeometry(window_size_x*3/5 + 2*delta, window_size_y*4/20, text_size_x, text_size_y);
     den_edit12 = new QLineEdit("1", this);
     den_edit12->setGeometry(window_size_x*3/5 + 3*delta, window_size_y*4/20, edit_size_x, edit_size_y);
 
     num_edit20 = new QLineEdit("0", this);
     num_edit20->setGeometry(window_size_x*1/5, window_size_y*7/20, edit_size_x, edit_size_y);
-    fractional_text7 = new QLabel(" , ", this);
+    fractional_text7 = new QLabel(" +i ", this);
     fractional_text7->setGeometry(window_size_x*1/5 + 2*delta, window_size_y*7/20, text_size_x, text_size_y);
     den_edit20 = new QLineEdit("1", this);
     den_edit20->setGeometry(window_size_x*1/5 + 3*delta, window_size_y*7/20, edit_size_x, edit_size_y);
 
     num_edit21 = new QLineEdit("0", this);
     num_edit21->setGeometry(window_size_x*2/5, window_size_y*7/20, edit_size_x, edit_size_y);
-    fractional_text8 = new QLabel(" , ", this);
+    fractional_text8 = new QLabel(" +i ", this);
     fractional_text8->setGeometry(window_size_x*2/5 + 2*delta, window_size_y*7/20, text_size_x, text_size_y);
     den_edit21 = new QLineEdit("1", this);
     den_edit21->setGeometry(window_size_x*2/5 + 3*delta, window_size_y*7/20, edit_size_x, edit_size_y);
 
     num_edit22 = new QLineEdit("0", this);
     num_edit22->setGeometry(window_size_x*3/5, window_size_y*7/20, edit_size_x, edit_size_y);
-    fractional_text9 = new QLabel(" , ", this);
+    fractional_text9 = new QLabel(" +i ", this);
     fractional_text9->setGeometry(window_size_x*3/5 + 2*delta, window_size_y*7/20, text_size_x, text_size_y);
     den_edit22 = new QLineEdit("1", this);
     den_edit22->setGeometry(window_size_x*3/5 + 3*delta, window_size_y*7/20, edit_size_x, edit_size_y);
@@ -101,12 +102,16 @@ Interface::Interface(QWidget *parent)
 
     float_btn = new QRadioButton("Вещественное", this);
     float_btn->setGeometry(window_size_x*3/5 + 3*delta, window_size_y*10/20, button_size_x, edit_size_y);
-    float_btn->setChecked(true);
+    complex_btn->setChecked(true);
 
     connect(det_btn,SIGNAL(pressed()), this, SLOT(formRequest()));
     connect(transport_btn,SIGNAL(pressed()), this, SLOT(formRequest()));
     connect(rang_btn,SIGNAL(pressed()), this, SLOT(formRequest()));
     connect(print_btn,SIGNAL(pressed()), this, SLOT(formRequest()));
+
+    connect(float_btn,SIGNAL(clicked()), this, SLOT(visible()));
+    connect(complex_btn,SIGNAL(clicked()), this, SLOT(visible()));
+    connect(rational_btn,SIGNAL(clicked()), this, SLOT(visible()));
 
 }
 
@@ -146,6 +151,71 @@ Interface::~Interface()
     delete complex_btn;
     delete rational_btn;
     delete float_btn;
+}
+
+void Interface::visible(){
+    if(float_btn->isChecked()){
+        den_edit00->setVisible(false);
+        den_edit01->setVisible(false);
+        den_edit02->setVisible(false);
+        den_edit10->setVisible(false);
+        den_edit11->setVisible(false);
+        den_edit12->setVisible(false);
+        den_edit20->setVisible(false);
+        den_edit21->setVisible(false);
+        den_edit22->setVisible(false);
+        fractional_text1->setText("");
+        fractional_text2->setText("");
+        fractional_text3->setText("");
+        fractional_text4->setText("");
+        fractional_text5->setText("");
+        fractional_text6->setText("");
+        fractional_text7->setText("");
+        fractional_text8->setText("");
+        fractional_text9->setText("");
+    }
+
+    if(complex_btn->isChecked()){
+        den_edit00->setVisible(true);
+        den_edit01->setVisible(true);
+        den_edit02->setVisible(true);
+        den_edit10->setVisible(true);
+        den_edit11->setVisible(true);
+        den_edit12->setVisible(true);
+        den_edit20->setVisible(true);
+        den_edit21->setVisible(true);
+        den_edit22->setVisible(true);
+        fractional_text1->setText("+i");
+        fractional_text2->setText("+i");
+        fractional_text3->setText("+i");
+        fractional_text4->setText("+i");
+        fractional_text5->setText("+i");
+        fractional_text6->setText("+i");
+        fractional_text7->setText("+i");
+        fractional_text8->setText("+i");
+        fractional_text9->setText("+i");
+    }
+
+    if(rational_btn->isChecked()){
+        den_edit00->setVisible(true);
+        den_edit01->setVisible(true);
+        den_edit02->setVisible(true);
+        den_edit10->setVisible(true);
+        den_edit11->setVisible(true);
+        den_edit12->setVisible(true);
+        den_edit20->setVisible(true);
+        den_edit21->setVisible(true);
+        den_edit22->setVisible(true);
+        fractional_text1->setText(" / ");
+        fractional_text2->setText(" / ");
+        fractional_text3->setText(" / ");
+        fractional_text4->setText(" / ");
+        fractional_text5->setText(" / ");
+        fractional_text6->setText(" / ");
+        fractional_text7->setText(" / ");
+        fractional_text8->setText(" / ");
+        fractional_text9->setText(" / ");
+    }
 }
 
 void Interface::formRequest() {

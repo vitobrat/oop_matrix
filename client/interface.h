@@ -24,6 +24,7 @@ public:
 public slots:
     void answer(QString);
 private slots:
+    void visible();
     void formRequest();
 
 signals:
