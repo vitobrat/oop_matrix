@@ -1,15 +1,14 @@
 #include "parser.h"
 
 
-TParser::TParser(QWidget *parent) : QWidget(parent) {
+Parser::Parser(QWidget *parent) : QWidget(parent) {
     std::string path = "C:\\OOP\\matrix\\oop_matrix\\graph.txt";
     graph = new Graph();
-    parseFile(path);
+    graph = parseFile(path);
 }
 
-short TParser::parseFile(const std::string &path) {
+Graph* Parser::parseFile(const std::string &path) {
     std::ifstream file(path);
-    if (!file.is_open()) return -1;
     std::string line;
     std::getline(file, line);
     std::string neighbour;
@@ -20,7 +19,6 @@ short TParser::parseFile(const std::string &path) {
             neighbour.clear();
         } else {
             neighbour += c;
-            if (neighbour.length() > 1) return -2;
         }
     }
     neighbours.push_back(neighbour[0]);
@@ -38,5 +36,5 @@ short TParser::parseFile(const std::string &path) {
     Matrix matrix(values);
     graph->setVer(neighbours, matrix);
     file.close();
-    return 1;
+    return graph;
 }

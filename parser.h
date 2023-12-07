@@ -10,16 +10,16 @@
 #include <fstream>
 
 
-class TParser : public QWidget {
+class Parser : public QWidget {
     friend class TSample;
 
-private:
+protected:
     Q_OBJECT
-    Graph *graph;
-    short parseFile(const std::string& file);
+    Graph* parseFile(const std::string &path);
 
 public:
-    TParser(QWidget *parent = nullptr);
+    Parser(QWidget *parent = nullptr);
+    Graph *graph;
 };
 
 

@@ -10,13 +10,17 @@ CONFIG += c++17
 
 SOURCES += \
     graph.cpp \
+    interface.cpp \
     main.cpp \
-    parser.cpp
+    parser.cpp \
+    sample.cpp
 
 HEADERS += \
     graph.h \
+    interface.h \
     matrix.h \
-    parser.h
+    parser.h \
+    sample.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
