@@ -8,7 +8,7 @@
 #include <QMessageBox>
 #include <vector>
 #include <fstream>
-
+#include <iostream>
 
 class Parser : public QWidget {
     friend class TSample;
@@ -19,7 +19,9 @@ protected:
 
 public:
     Parser(QWidget *parent = nullptr);
+    int check_matrix(const std::string &path);
     Graph *graph;
+    int error;
 };
 
 

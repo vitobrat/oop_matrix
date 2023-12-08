@@ -9,8 +9,14 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
 
     Parser parser;
-    Sample sample(parser.graph);
-    Interface interface(&sample);
-    interface.show();
+    if(!parser.error) {
+        Sample sample(parser.graph);
+        Interface interface(&sample);
+        interface.show();
+    }else{
+        Interface interface(parser.error);
+        interface.show();
+    }
+
     return app.exec();
 }

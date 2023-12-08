@@ -8,6 +8,24 @@ Interface::Interface(Sample *sample, QWidget *parent) : QWidget(parent) {
     setWindowTitle("lab7");
     setFixedSize(size_x, size_y);
     this->sample = sample;
+
+}
+
+Interface::Interface(int error, QWidget *parent){
+    setWindowTitle("lab7");
+    setFixedSize(size_x, size_y);
+    QLabel *error_text = new QLabel("", this);
+    error_text->setGeometry(size_x / 2, size_y / 2, 100, 100);
+    switch (error) {
+    case 0:
+
+        break;
+    case 1:
+        error_text->setText("сука");
+    default:
+        break;
+    }
+
 }
 
 
