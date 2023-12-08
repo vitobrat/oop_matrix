@@ -21,7 +21,6 @@ public:
     Parser(QWidget *parent = nullptr);
     int check_matrix(const std::string &path);
     Graph *graph;
-    int error;
 };
 
 

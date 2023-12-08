@@ -7,20 +7,20 @@ enum Errors{
 };
 
 Parser::Parser(QWidget *parent) : QWidget(parent) {
-    std::string path = "D:\\qt\\prodjs\\oop_matrix\\graph.txt";
+    std::string path = "C:\\OOP\\matrix\\oop_matrix\\graph.txt";
     graph = new Graph();
     switch (check_matrix(path)) {
     case NO_MISTAKE :
         graph = parseFile(path);
-        error = NO_MISTAKE;
+        graph->error = NO_MISTAKE;
         break;
     case NO_SQUARE:
         qDebug () <<"NO_SQUARE";
-        error = NO_SQUARE;
+        graph->error = NO_SQUARE;
         break;
     case INCORRECT_VALUE:
         qDebug () << "INCORRECT_VALUE";
-        error = INCORRECT_VALUE;
+        graph->error = INCORRECT_VALUE;
         break;
     default:
         break;

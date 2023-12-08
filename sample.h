@@ -10,10 +10,9 @@
 
 class Sample {
 private:
-    Graph *graph;
 
 public:
-    // Constructor and updater
+    Graph *graph;
     Sample(Graph*);
     void changeSource(Graph*);
 

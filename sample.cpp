@@ -40,9 +40,6 @@ void Sample::draw(QPainter* painter, QRect &rect) {
     for (int i = 0; i < graph->size(); ++i) {
         std::vector<Ver*> neighbors = vertices[i]->getNeighbors();
         for (int j = 0; j < neighbors.size(); ++j) {
-            // Draw edge
-            // Using the Pythagorean formula, obtain the vector
-            // offset (length = vertR) of the direction of the edge
             QPointF p1 = verticesPos[vertices[i]];
             QPointF p2 = verticesPos[neighbors[j]];
             QPointF v = p2 - p1;
