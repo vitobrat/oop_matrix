@@ -11,7 +11,6 @@
 #include <iostream>
 
 class Parser : public QWidget {
-    friend class TSample;
 
 protected:
     Q_OBJECT

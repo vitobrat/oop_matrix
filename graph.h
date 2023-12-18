@@ -23,11 +23,11 @@ class Graph {
 private:
     std::vector<Ver*> vertices;
 public:
+    int error;
     Graph() = default;
     void setVer(const std::vector<char> &names, const Matrix &matrix);
     int size() const;
     bool empty() const;
-    int error;
     std::vector<Ver*> getVer() const;
 };
 
