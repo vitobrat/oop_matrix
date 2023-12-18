@@ -29,14 +29,14 @@ void Sample::draw(QPainter* painter, QRect &rect) {
         int dy = static_cast<int>(radius * qSin(rad));
         QPoint circlePoint = rect.center() + QPoint(dx, dy);
         verticesPos[vertices[i]] = circlePoint;
-        painter->setBrush(Qt::black);
+        painter->setBrush(Qt::green);
         painter->drawEllipse(circlePoint, vertR, vertR);
         painter->setPen(Qt::white);
         painter->setFont(QFont("Arial", 10, QFont::Bold));
         QRect textRect(circlePoint.x() - vertR, circlePoint.y() - vertR, 2*vertR, 2*vertR);
         painter->drawText(textRect, QChar(vertices[i]->getName()), QTextOption(Qt::AlignCenter));
     }
-    painter->setPen(QPen(Qt::black, 3));
+    painter->setPen(QPen(Qt::red, 3));
     for (int i = 0; i < graph->size(); ++i) {
         std::vector<Ver*> neighbors = vertices[i]->getNeighbors();
         for (int j = 0; j < neighbors.size(); ++j) {

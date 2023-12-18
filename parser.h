@@ -16,7 +16,7 @@ class Parser : public QWidget {
 protected:
     Q_OBJECT
     Graph* parseFile(const std::string &path);
-
+    std::string getPath();
 public:
     Parser(QWidget *parent = nullptr);
     int check_matrix(const std::string &path);

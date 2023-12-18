@@ -6,8 +6,16 @@ enum Errors{
     INCORRECT_VALUE,
 };
 
+std::string Parser::getPath() {
+    QFile file = QFileDialog::getOpenFileName(
+        nullptr, tr("Open input file"), "../oop_matrix", tr("Text (*.txt)")
+        );
+    qDebug() << file.fileName().toStdString();
+    return file.fileName().toStdString();
+}
+
 Parser::Parser(QWidget *parent) : QWidget(parent) {
-    std::string path = "C:\\OOP\\matrix\\oop_matrix\\graph.txt";
+    std::string path = getPath();
     graph = new Graph();
     switch (check_matrix(path)) {
     case NO_MISTAKE :
@@ -25,7 +33,6 @@ Parser::Parser(QWidget *parent) : QWidget(parent) {
     default:
         break;
     }
-
 }
 
 int Parser::check_matrix(const std::string &path){

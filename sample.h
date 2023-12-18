@@ -14,10 +14,9 @@ private:
 public:
     Graph *graph;
     Sample(Graph*);
-    void changeSource(Graph*);
-
+    virtual void changeSource(Graph*);
+    virtual void draw(QPainter*, QRect&);
     bool empty();
-    void draw(QPainter*, QRect&);
 };
 
 
